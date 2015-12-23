@@ -5,7 +5,8 @@ MAINTAINER Francois Villain "f.villain@linkbynet.com"
 COPY config/etc/nginx/conf.d/default.conf.tpl /etc/nginx/conf.d/default.conf.tpl
 
 RUN mkdir -p /var/www/html && \
-    echo "Welcome to NginX" > /var/www/html/index.html
+    echo "Welcome to NginX" > /var/www/html/index.html && \
+    chown -R root:root /var/www /etc/nginx /var/log/nginx /var/cache/nginx
 
 VOLUME ["/var/www/html"]
 

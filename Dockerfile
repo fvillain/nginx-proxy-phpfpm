@@ -2,6 +2,7 @@ FROM nginx:latest
 
 MAINTAINER Francois Villain "f.villain@linkbynet.com"
 
+USER root
 COPY config/etc/nginx/conf.d/default.conf.tpl /etc/nginx/conf.d/default.conf.tpl
 
 RUN mkdir -p /var/www/html && \
